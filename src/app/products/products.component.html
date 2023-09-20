@@ -1,0 +1,11 @@
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+  <app-product-card
+    *ngFor="let product of products$ | async"
+    [product]="product"
+  ></app-product-card>
+</div>
+<!-- <div class="flex flex-col gap-4 p-4">
+  <app-product-list
+    [products]="products"
+  ></app-product-list>
+</div> -->

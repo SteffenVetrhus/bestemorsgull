@@ -1,0 +1,17 @@
+<div class="bg-white p-4 rounded-lg shadow-md">
+  <div class="flex justify-center items-center bg-gray-200 h-32">
+    <span>Placeholder for bilde</span>
+  </div>
+  <div class="mt-4">
+    <h2 class="text-lg font-semibold">{{ product.name }}</h2>
+    <p class="text-sm text-gray-600">{{ product.description }}</p>
+    <div class="mt-4 flex justify-between w-full">
+      <span class="text-lg font-bold">{{ product.price }} kr</span>
+      <button (click)="addToCart(product)"
+        class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded"
+      >
+        Legg til handlekurv
+      </button>
+    </div>
+  </div>
+</div>

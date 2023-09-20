@@ -1,0 +1,12 @@
+<div class="bg-white p-4 rounded-lg shadow-md flex items-center" *ngFor="let product of products">
+    <div class="flex-none w-32 flex justify-center items-center bg-gray-200 h-32">
+      <span>Placeholder for bilde</span>
+    </div>
+    <div class="ml-4 flex-grow">
+      <h2 class="text-lg font-semibold">{{ product.name }}</h2>
+      <p class="text-sm text-gray-600">{{ product.description }}</p>
+    </div>
+    <div class="ml-4">
+      <span class="text-lg font-bold">{{ product.price }} kr</span>
+    </div>
+  </div>

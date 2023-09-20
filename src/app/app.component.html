@@ -1,1 +1,92 @@
-<app-nx-welcome></app-nx-welcome> <router-outlet></router-outlet>
+<body>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-terracotta to-sand text-white py-8">
+    <!-- Toolbar -->
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between">
+        <!-- Logo or Brand Name -->
+        <div class="flex items-center space-x-2">
+          <div class="text-lg font-semibold">BESTEMORS GULL</div>
+          <div class="md:hidden">
+            <!-- Mobile menu button (hamburger icon) -->
+            <button
+              id="mobile-menu-button"
+              class="text-white hover:text-gray-800 focus:outline-none"
+              aria-label="Toggle mobile menu"
+              (click)="toggleMobileMenu()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <!-- Hamburger icon lines -->
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Navigation Links (Desktop) -->
+        <div class="hidden md:flex space-x-4">
+          <a routerLink="" class="text-white hover:text-gray-800 uppercase"
+            >Hjem</a
+          >
+          <a routerLink="about" class="text-white hover:text-gray-800 uppercase"
+            >Om</a
+          >
+          <a routerLink="shop" class="text-white hover:text-gray-800 uppercase"
+            >Butikk</a
+          >
+          <a
+            routerLink="contact"
+            class="text-white hover:text-gray-800 uppercase"
+            >Kontakt</a
+          >
+          <button
+            (click)="goToCart()"
+            class="bg-terracotta text-white py-2 px-4 rounded mt-4 w-full"
+          >
+            Handlekurv - {{ cartCount$ | async }}
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- End of Toolbar -->
+
+    <!-- Mobile Menu (Dropdown) -->
+    <div
+      id="mobile-menu"
+      class="md:hidden bg-white p-4"
+      [ngClass]="{ hidden: !isMobileMenuOpen }"
+    >
+      <a routerLink="" class="block text-gray-800 py-2 border-b">Hjem</a>
+      <a routerLink="about" class="block text-gray-800 py-2 border-b">Om</a>
+      <a routerLink="shop" class="block text-gray-800 py-2 border-b">Butikk</a>
+      <a routerLink="contact" class="block text-gray-800 py-2">Kontakt</a>
+
+      <!-- "Handlekurv" button in mobile menu -->
+      <button
+        (click)="goToCart()"
+        class="bg-terracotta text-white py-2 px-4 rounded mt-4 w-full"
+      >
+        Handlekurv - {{ cartCount$ | async }}
+      </button>
+    </div>
+
+    <!-- Hero Content -->
+
+    <!-- End of Hero Content -->
+  </section>
+  <!-- End of Hero Section -->
+
+  <!-- End of News Section -->
+  <router-outlet></router-outlet>
+</body>
